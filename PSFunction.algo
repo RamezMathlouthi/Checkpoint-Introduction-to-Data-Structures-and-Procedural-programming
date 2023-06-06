@@ -1,0 +1,33 @@
+FUNCTION ProduitScalaire(a,b : ARRAY_OF INTEGER[]) : INTEGER
+VAR
+    sum : INTEGER := 0;
+BEGIN
+    FOR i FROM 1 TO a.length STEP 1  DO
+        sum := sum + a[i]*b[i];
+    END_FOR
+    RETURN sum ;
+END
+
+ALGORITHM Checkpoint
+VAR
+    T : ARRAY_OF INTEGER[] := [-1,1];
+    V : ARRAY_OF INTEGER[] := [5,5];
+    kes : INTEGER;
+BEGIN
+// While creating your algorithm, you should: 
+
+// Use array for presenting the vector.
+// Use nested loop (a loop inside another if you want)
+// Use different types of passing parameters
+    IF (T.length >3 AND T.length<2 AND T.length<>V.length ) THEN
+        Write("Error")
+    ELSE
+       kes := ProduitScalaire(T,V);
+
+       IF (kes = 0) THEN
+        Write("Orth")
+       ELSE
+        Write("Non orth")
+       END_IF
+    END_IF
+END
